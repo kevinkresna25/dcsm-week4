@@ -9,7 +9,7 @@ public class Client {
     public static void main(String[] args) {
         String host = (args.length < 1) ? "rmi-server" : args[0];
         try {
-            Registry registry = LocateRegistry.getRegistry(host);
+            Registry registry = LocateRegistry.getRegistry(host, 50051);
             Hello stub = (Hello) registry.lookup("Hello");
             String response = stub.sayHello();
             System.out.println("Response: " + response);

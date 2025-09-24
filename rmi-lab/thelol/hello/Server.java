@@ -17,10 +17,12 @@ public class Server implements Hello {
             Server obj = new Server();
             Hello stub = (Hello) UnicastRemoteObject.exportObject(obj, 0);
 
-            Registry registry = LocateRegistry.createRegistry(1099);
+            // PORT DEFAULT 1099
+            int port = 50051;
+            Registry registry = LocateRegistry.createRegistry(port);
             registry.rebind("Hello", stub);
 
-            System.out.println("RMI Server ready");
+            System.out.println("RMI Server ready on port " + port);
         } catch (Exception e) {
             System.err.println("Server exception: " + e.toString());
             e.printStackTrace();

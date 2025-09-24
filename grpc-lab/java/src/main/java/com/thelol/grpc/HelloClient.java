@@ -9,7 +9,7 @@ import com.thelol.grpc.HelloReply;
 
 public class HelloClient {
     public static void main(String[] args) {
-        ManagedChannel channel = ManagedChannelBuilder.forAddress("hello-java-server", 50051)
+        ManagedChannel channel = ManagedChannelBuilder.forAddress("grpc-java-server", 50052)
                 .usePlaintext()
                 .build();
 

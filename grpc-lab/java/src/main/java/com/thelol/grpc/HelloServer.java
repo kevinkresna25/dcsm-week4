@@ -10,12 +10,13 @@ import com.thelol.grpc.HelloReply;
 
 public class HelloServer {
     public static void main(String[] args) throws Exception {
-        Server server = ServerBuilder.forPort(50051)
+        int port = 50052;
+        Server server = ServerBuilder.forPort(port)
                 .addService(new GreeterImpl())
                 .build()
                 .start();
 
-        System.out.println("gRPC server running on port 50051");
+        System.out.println("gRPC server running on port " + port);
         server.awaitTermination();
     }
 
