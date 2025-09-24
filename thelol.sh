@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 set -e
 
-if command -v docker compose &> /dev/null; then
+# Docker Version Check
+if docker compose version &> /dev/null; then
     DC="docker compose"
-elif command -v docker-compose &> /dev/null; then
+elif docker-compose version &> /dev/null; then
     DC="docker-compose"
 else
-    echo "❌ docker compose or docker-compose not found!"
+    echo "❌ docker compose not found!"
     exit 1
 fi
 
