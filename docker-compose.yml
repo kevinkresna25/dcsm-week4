@@ -1,0 +1,74 @@
+services:
+  # gRPC Java
+  hello-java-server:
+    build:
+      context: ./grpc-lab/java
+    container_name: java-grpc-java-server
+    profiles: ["grpc-java"]
+#    ports:
+#      - "50051:50051"
+    networks:
+      - grpc-rmi-net
+    command: java -jar thelol.jar
+
+  hello-java-client:
+    build:
+      context: ./grpc-lab/java
+    container_name: java-grpc-java-client
+    profiles: ["grpc-java"]
+    networks:
+      - grpc-rmi-net
+    depends_on:
+      - hello-java-server
+    command: java -cp thelol.jar com.thelol.grpc.HelloClient
+
+  # gRPC Python
+  grpc-python-server:
+    build:
+      context: ./grpc-lab/python
+    container_name: grpc-python-server
+    profiles: ["grpc-python"]
+#    ports:
+#      - "50052:50052"
+    networks:
+      - grpc-rmi-net
+    command: python server.py
+
+  grpc-python-client:
+    build:
+      context: ./grpc-lab/python
+    container_name: grpc-python-client
+    profiles: ["grpc-python"]
+    networks:
+      - grpc-rmi-net
+    depends_on:
+      - grpc-python-server
+    command: python client.py
+
+  # Java RMI
+  rmi-server:
+    build:
+      context: ./rmi-lab
+    container_name: rmi-server
+    profiles: ["rmi"]
+#    ports:
+#      - "1099:1099"
+    networks:
+      - grpc-rmi-net
+    command: java thelol.hello.Server
+
+  rmi-client:
+    build:
+      context: ./rmi-lab
+    container_name: rmi-client
+    profiles: ["rmi"]
+    networks:
+      - grpc-rmi-net
+    depends_on:
+      - rmi-server
+    command: java thelol.hello.Client rmi-server
+
+networks:
+  grpc-rmi-net:
+    name: grpc-rmi-net
+    driver: bridge

@@ -1,0 +1,42 @@
+# VCS
+.git
+.gitignore
+
+# Docker & Compose
+docker-compose*.yml
+.dockerignore
+
+# Build artifacts (Java/Gradle, Python, dll)
+build/
+target/
+.gradle/
+*.class
+*.jar
+*.war
+*.ear
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+env/
+venv/
+.venv/
+
+# NodeJS (kalau ada di project ke depan)
+node_modules/
+
+# IDE / Editor config
+*.iml
+.idea/
+.vscode/
+*.swp
+
+# OS / Temporary files
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
