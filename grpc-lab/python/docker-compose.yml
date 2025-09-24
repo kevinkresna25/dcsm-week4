@@ -1,12 +1,12 @@
 services:
-  grpc-server:
+  grpc-python-server:
     build: .
     container_name: grpc-server
     command: python server.py
 #    ports:
 #      - "50052:50052"
 
-  grpc-client:
+  grpc-python-client:
     build: .
     container_name: grpc-client
     command: python client.py

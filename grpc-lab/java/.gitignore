@@ -1,0 +1,27 @@
+# ===== Java =====
+*.class
+*.jar
+*.war
+*.ear
+*.log
+hs_err_pid*
+replay_pid*
+
+# build / IDE
+/.idea/
+/.vscode/
+/target/
+/build/
+/out/
+
+# ===== Docker =====
+*.pid
+*.seed
+*.bak
+*.swp
+*.swo
+docker-compose.override.yml
+
+# ===== OS files =====
+.DS_Store
+Thumbs.db

@@ -1,0 +1,14 @@
+services:
+  hello-java-server:
+    build: .
+    container_name: java-grpc-java-server
+    command: java -cp build/libs/java-grpc-lab-1.0-SNAPSHOT.jar com.thelol.grpc.Server
+#    ports:
+#      - "50051:50051"
+
+  hello-java-client:
+    build: .
+    container_name: java-grpc-java-client
+    command: java -cp build/libs/java-grpc-lab-1.0-SNAPSHOT.jar com.thelol.grpc.Client
+    depends_on:
+      - hello-java-server
