@@ -16,6 +16,6 @@ FROM openjdk:17
 
 WORKDIR /app
 
-COPY --from=builder /app/build/libs/app.jar thelol.jar
+COPY --from=builder /app/build/libs/app-all.jar thelol.jar
 
 CMD ["java", "-jar", "thelol.jar"]
