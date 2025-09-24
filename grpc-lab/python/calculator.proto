@@ -3,6 +3,8 @@ syntax = "proto3";
 service Calculator {
   rpc Add (CalcRequest) returns (CalcReply);
   rpc Multiply (CalcRequest) returns (CalcReply);
+  rpc Subtract (CalcRequest) returns (CalcReply);
+  rpc Divide (CalcRequest) returns (CalcReply);
 }
 
 message CalcRequest {
