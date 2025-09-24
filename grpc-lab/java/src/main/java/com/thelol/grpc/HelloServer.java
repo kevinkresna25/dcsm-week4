@@ -3,6 +3,10 @@ package com.thelol.grpc;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
+import com.thelol.grpc.GreeterGrpc;
+import com.thelol.grpc.HelloRequest;
+import com.thelol.grpc.HelloReply;
+
 
 public class HelloServer {
     public static void main(String[] args) throws Exception {

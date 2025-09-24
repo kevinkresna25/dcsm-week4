@@ -2,6 +2,10 @@ package com.thelol.grpc;
 
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import com.thelol.grpc.GreeterGrpc;
+import com.thelol.grpc.HelloRequest;
+import com.thelol.grpc.HelloReply;
+
 
 public class HelloClient {
     public static void main(String[] args) {
