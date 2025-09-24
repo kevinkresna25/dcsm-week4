@@ -1,7 +1,7 @@
 plugins {
     id 'java'
     id 'com.google.protobuf' version '0.9.4'
-    id 'com.github.johnrengelman.shadow' version '8.1.1' // untuk fat jar
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
 }
 
 group 'com.thelol.grpc'
@@ -59,12 +59,10 @@ jar {
  * Output: build/libs/app-all.jar
  */
 shadowJar {
-    archiveBaseName.set("app")
+    archiveBaseName.set("thelol")
     archiveClassifier.set("all")
     archiveVersion.set("")
     manifest {
-        attributes(
-            'Main-Class': 'com.thelol.grpc.HelloServer'
-        )
+        attributes 'Main-Class': 'com.thelol.grpc.HelloServer'
     }
 }
