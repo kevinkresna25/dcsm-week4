@@ -3,8 +3,8 @@ services:
     build: .
     container_name: grpc-server
     command: python server.py
-    ports:
-      - "50052:50052"
+#    ports:
+#      - "50052:50052"
 
   grpc-client:
     build: .

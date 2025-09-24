@@ -3,8 +3,8 @@ services:
     build: .
     container_name: rmi-server
     command: java thelol.hello.Server
-    ports:
-      - "1099:1099"
+#    ports:
+#      - "1099:1099"
 
   rmi-client:
     build: .
