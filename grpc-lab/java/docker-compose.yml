@@ -2,16 +2,20 @@ services:
   hello-java-server:
     build: .
     container_name: java-grpc-java-server
+    command: java -jar thelol.jar
+#    ports:
+#      - "50051:50051"
     networks:
       - grpcnet
 
   hello-java-client:
     build: .
     container_name: java-grpc-java-client
-    networks:
-      - grpcnet
+    command: java -cp thelol.jar com.thelol.grpc.HelloClient
     depends_on:
       - hello-java-server
+    networks:
+      - grpcnet
 
 networks:
   grpcnet:
