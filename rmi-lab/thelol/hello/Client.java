@@ -1,4 +1,4 @@
-package example.hello;
+package thelol.hello;
 
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
