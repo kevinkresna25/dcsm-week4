@@ -37,6 +37,12 @@ Selain itu, di root terdapat:
 
 ```bash
 chmod +x thelol.sh
+./thelol.sh
+```
+
+Jalankan semua
+
+```bash
 ./thelol.sh up all
 ```
 
