@@ -7,7 +7,7 @@ WORKDIR /app
 
 COPY . /app
 
-RUN gradle build --no-daemon
+RUN gradle clean build --no-daemon
 
 #############################
 # Java Runtime
@@ -16,6 +16,6 @@ FROM openjdk:17
 
 WORKDIR /app
 
-COPY --from=builder /app/build/libs/java-grpc-lab-1.0-SNAPSHOT.jar app.jar
+COPY --from=builder /app/build/libs/app.jar thelol.jar
 
-CMD ["java", "-jar", "app.jar"]
+CMD ["java", "-jar", "thelol.jar"]
