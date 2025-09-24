@@ -1,15 +1,19 @@
-version: '3'
 services:
   hello-java-server:
     build: .
     container_name: java-grpc-java-server
-    command: java -jar thelol.jar
-#    ports:
-#      - "50051:50051"
+    networks:
+      - grpcnet
 
   hello-java-client:
     build: .
     container_name: java-grpc-java-client
-    command: java -cp thelol.jar com.thelol.grpc.HelloClient
+    networks:
+      - grpcnet
     depends_on:
       - hello-java-server
+
+networks:
+  grpcnet:
+    name: grpcnet
+    driver: bridge
