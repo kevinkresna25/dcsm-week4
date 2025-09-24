@@ -2,7 +2,7 @@ import grpc
 import calculator_pb2, calculator_pb2_grpc
 
 def run():
-    channel = grpc.insecure_channel("localhost:50052")
+    channel = grpc.insecure_channel("grpc-server:50052")
     stub = calculator_pb2_grpc.CalculatorStub(channel)
 
     add_response = stub.Add(calculator_pb2.CalcRequest(a=3, b=5))

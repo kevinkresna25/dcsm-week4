@@ -7,7 +7,7 @@ public class Client {
     private Client() {}
 
     public static void main(String[] args) {
-        String host = (args.length < 1) ? "localhost" : args[0];
+        String host = (args.length < 1) ? "rmi-server" : args[0];
         try {
             Registry registry = LocateRegistry.getRegistry(host);
             Hello stub = (Hello) registry.lookup("Hello");
