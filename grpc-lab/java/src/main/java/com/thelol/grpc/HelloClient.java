@@ -3,7 +3,7 @@ package com.thelol.grpc;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 
-public class Client {
+public class HelloClient {
     public static void main(String[] args) {
         ManagedChannel channel = ManagedChannelBuilder.forAddress("hello-java-server", 50051)
                 .usePlaintext()
